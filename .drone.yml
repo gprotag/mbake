@@ -8,3 +8,9 @@ steps:
   commands:
   - echo hello
   - echo world
+
+steps:
+- name: fail
+  image: alpine
+  commands:
+  - asdfaca
