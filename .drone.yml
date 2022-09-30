@@ -5,12 +5,13 @@ name: default
 steps:
 - name: greeting
   image: alpine
+  environment:
+    KEY:
+      from_secret: access_key
+    TOKEN:
+      from_secret: gcp_creds
+      
   commands:
-  - echo hello
-  - echo world
-
-steps:
-- name: fail
-  image: alpine
-  commands:
-  - asdfaca
+  - echo Initializing...
+  - echo key $${KEY}
+  - echo token $${TOKEN}
